@@ -14,6 +14,13 @@ demoApp.config(['$routeProvider', function($rp) {
     })
     // AUTH_EXP: how do the signin/up routes differ and what is their relationship
     // with one another
+
+    // These two routes use different controllers. They use the same template and
+    // are called the same thing(controllerAs) so that they can access the same
+    // HTML elements in the webpage, reducing redundant fields that would otherwise
+    // exist. The controllers' keys/methods have the same names, so that they can
+    // indeed use the same html elements, but give them different functions, as
+    //well as different button text depending on the route.
     .when('/signup', {
       templateUrl: 'templates/auth/views/auth_view.html',
       controller: 'SignUpController',
